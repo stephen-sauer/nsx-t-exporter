@@ -55,7 +55,7 @@ services:
       - LOG_LEVEL=<NSX-T Exporter logging level.>
 
 ```
-And to start the exporter, run the following command in the nsx-t-exporter
+And to start the exporter, run the following command in the nsx-t-exporter directory:
 docker-compose up
 
 ## Metrics
