@@ -39,7 +39,7 @@ type Nsxv3ResourceKind string
 const (
 	ManagementCluster           Nsxv3ResourceKind = "ManagementCluster"
 	ManagementClusterNodes      Nsxv3ResourceKind = "ManagementClusterNodes"
-	ManagementClusterDatabase   Nsxv3ResourceKind = "ManagementClusterDatabase"
+//	ManagementClusterDatabase   Nsxv3ResourceKind = "ManagementClusterDatabase"
 	ManagerNodeFirewall         Nsxv3ResourceKind = "ManagerNodeFirewall"
 	ManagerNodeFirewallSections Nsxv3ResourceKind = "ManagerNodeFirewallSections"
 	TransportNode               Nsxv3ResourceKind = "TransportNode"

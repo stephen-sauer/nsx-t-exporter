@@ -18,12 +18,12 @@ var managementClusterStates = map[string]float64{
 	"DEGRADED":     -2,
 	"UNKNOWN":      -3,
 }
-
+/*
 var managementClusterDatabaseStatus = map[string]float64{
 	"RUNNING": 0,
 	"STOPPED": 1,
 }
-
+*/
 var controlClusterStates = map[string]float64{
 	"STABLE":         1,
 	"NO_CONTROLLERS": 0,
@@ -167,7 +167,7 @@ func clusterNodesStatusHandler(data *Nsxv3Data, status *Nsxv3Resource) (string, 
 	}
 	return noCursor, nil
 }
-
+/*
 func managementClusterDatabaseHandler(data *Nsxv3Data, status *Nsxv3Resource) (string, error) {
 	state := status.state["runtime_state"].(string)
 
@@ -175,7 +175,7 @@ func managementClusterDatabaseHandler(data *Nsxv3Data, status *Nsxv3Resource) (s
 
 	return noCursor, nil
 }
-
+*/
 func managerNodeFirewallHandler(data *Nsxv3Data, status *Nsxv3Resource) (string, error) {
 	results := status.state["sections_summary"]
 	var sectionTypes []interface{}
@@ -348,14 +348,14 @@ func getEndpointStatus(endpointStatusType Nsxv3ResourceKind, endpointHost string
 				URL:    &url.URL{Host: endpointHost, Path: "/api/v1/firewall/sections"},
 			},
 		}
-	case ManagementClusterDatabase:
+/*	case ManagementClusterDatabase:
 		return Nsxv3Resource{
 			kind: ManagementClusterDatabase,
 			request: &http.Request{
 				Method: "GET",
 				URL:    &url.URL{Host: endpointHost, Path: "/api/v1/node/services/datastore/status"},
 			},
-		}
+		} */
 	case LogicalSwitch:
 		return Nsxv3Resource{
 			kind: LogicalSwitch,
@@ -428,8 +428,8 @@ func handle(data *Nsxv3Data, status *Nsxv3Resource) (string, error) {
 		return clusterStatusHandler(data, status)
 	case ManagementClusterNodes:
 		return clusterNodesStatusHandler(data, status)
-	case ManagementClusterDatabase:
-		return managementClusterDatabaseHandler(data, status)
+//	case ManagementClusterDatabase:
+//		return managementClusterDatabaseHandler(data, status)
 	case ManagerNodeFirewall:
 		return managerNodeFirewallHandler(data, status)
 	case ManagerNodeFirewallSections:
@@ -507,7 +507,7 @@ func (e *Exporter) gather(data *Nsxv3Data) error {
 		[]Nsxv3Resource{
 			getEndpointStatus(ManagementCluster, ""),
 			getEndpointStatus(ManagementClusterNodes, ""),
-			getEndpointStatus(ManagementClusterDatabase, ""),
+//			getEndpointStatus(ManagementClusterDatabase, ""),
 			getEndpointStatus(LogicalSwitchAdmin, ""),
 			getEndpointStatus(LogicalSwitch, ""),
 			getEndpointStatus(TransportNode, ""),

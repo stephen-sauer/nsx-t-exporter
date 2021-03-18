@@ -19,15 +19,14 @@ NSX-T Expoerter takes input from environment variables as:
 - `LOG_LEVEL` (debug) NSX-T Exporter logging level.
 
 ## Build
-
 ```sh
 git clone https://github.com/sapcc/github.com/sapcc/nsx-t-exporter.git
 cd nsx-t-exporter
 docker build -t <image-name> .
+<image-name> is the name you have in docker-compose.yml image: field
 ```
 
 ## Run (Simple)
-
 Edit docker-compose.yml
 ```yaml
 version: "2"
@@ -56,6 +55,8 @@ services:
       - LOG_LEVEL=<NSX-T Exporter logging level.>
 
 ```
+And to start the exporter, run the following command in the nsx-t-exporter
+docker-compose up
 
 ## Metrics
 
