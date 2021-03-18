@@ -4,7 +4,7 @@ Exposes metrics from NSX-T Management Node REST API to a Prometheus compatible e
 
 ## Exporter Configuration
 
-NSX-T Expoerter takes input from environment variables as:
+NSX-T Exporter takes input from environment variables as:
 
 ### Mandatory Variables
 - `NSXV3_LOGIN_HOST` NSX-T Manager Node hostname or IP address.
