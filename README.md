@@ -1,6 +1,8 @@
 # Prometheus NSX-T Management Node Exporter
 
 Exposes metrics from NSX-T Management Node REST API to a Prometheus compatible endpoint.
+Source of this Code: from sapcc/nsx-t-exporter
+Minor changes done to work on On Prem with NSX-T 3.x
 
 ## Exporter Configuration
 
